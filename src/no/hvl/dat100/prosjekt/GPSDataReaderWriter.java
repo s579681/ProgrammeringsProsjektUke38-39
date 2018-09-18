@@ -150,16 +150,19 @@ public class GPSDataReaderWriter {
 
 		// andre linje skal inneholde en streng som beskriver GPS data formatet
 		System.out.println("time,latitude,longitude,elevation");
-
+		
 		// TODO
 		// OPPGAVE - START
 		
 		// skriv ut også breddegrad (latitude), longitude(lengdegrad) og høyde (elevation) for hvert punkt
 		
 		for (int i = 0; i < n; i++) {
-			System.out.println(times[i] + SEP_STR);
+			System.out.print(times[i] + SEP_STR);
+			System.out.print(latitudes[i] + SEP_STR);
+			System.out.print(longitudes[i] + SEP_STR);
+			System.out.println(elevations[i] + SEP_STR);
 		}
-
+		
 		// OPPGAVE - SLUTT;
 	}
 
