@@ -62,11 +62,20 @@ public class GPSUtils {
 	// Beregn avstand mellom to gps punkter ved bruk av Haversine formlen
 	public static double distance(double latitude1, double longitude1, double latitude2, double longitude2) {
 
-		double a,c,d = 1.0; // fjern = 1.0
+		double a,c,d; // fjern = 1.0
 		
 		// TODO:
 		// OPPGAVE - START
-		
+		latitude1 = Math.toRadians(latitude1);
+		latitude2 = Math.toRadians(latitude2);
+		double deltaLatitude = latitude2 - latitude1;
+		longitude1 = Math.toRadians(longitude1);
+		longitude2 = Math.toRadians(longitude2);
+		double deltaLongitude = longitude2 - longitude1;
+		a = (pow(Math.sin((deltaLatitude)/(2.0)), 2.0)) + (Math.cos(latitude1))*(Math.cos(latitude2))*(pow(Math.sin((deltaLongitude)/(2)),2));
+		c = 2*(Math.atan2(Math.sqrt(a), Math.sqrt(1-a)));
+		d = R*c;
+				
 		// OPPGAVE - SLUTT
 
 		return d;
