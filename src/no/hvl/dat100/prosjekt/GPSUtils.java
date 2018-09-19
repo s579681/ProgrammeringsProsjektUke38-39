@@ -18,7 +18,6 @@ public class GPSUtils {
 		// OPPGAVE - START
 				
 		// OPPGAVE - SLUTT
-		
 		return timestr;
 	}
 	
@@ -40,10 +39,18 @@ public class GPSUtils {
 	public static double findMin(double[] da) {
 
 		// fjern = "0.0" når metoden implementeres for ikke få forkert minimum
-		double min = 0.0; 
+		//double min = 0.0; 
 
 		// TODO
 		// OPPGAVE - START
+		double min = da[0];
+		
+		for (double d : da) {
+			if (d < min) {
+				min = d;
+			}
+			
+		}
 
 		// OPPGAVE - SLUT
 		return min;
