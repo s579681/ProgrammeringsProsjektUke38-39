@@ -39,7 +39,7 @@ public class GPSUtilsTester {
 		double[] daend =    { 2.0, 2.0, 7.0, 1.0};
 		
 		assertEquals("findMin",1,GPSUtils.findMin(damiddle),0);
-		assertEquals("findMin",1,GPSUtils.findMin(dastart),0);
+		assertEquals("findMin",1,GPSUtils.findMin(dastart),0);	
 		assertEquals("findMin",1,GPSUtils.findMin(daend),0);
 		
 	}
@@ -58,7 +58,7 @@ public class GPSUtilsTester {
 
 	@Test
 	public void testDistanceShort1() {
-		assertEquals("GPS Short Distance 2", 1080, GPSUtils.distance(60.385390, 5.217217, 60.376988, 5.227082), 1.0);
+			assertEquals("GPS Short Distance 2", 1080, GPSUtils.distance(60.385390, 5.217217, 60.376988, 5.227082), 1.0);
 	}
 
 	@Test
