@@ -2,6 +2,8 @@ package no.hvl.dat100.prosjekt;
 
 import static java.lang.Math.*;
 
+import java.util.Locale;
+
 public class GPSUtils {
 
 	public GPSUtils() {
@@ -16,6 +18,10 @@ public class GPSUtils {
 		
 		// TODO
 		// OPPGAVE - START
+		String secsString = Integer.toString(secs);
+		timestr = String.format("%.h%.m%.s", secs);	
+		
+		System.out.print(timestr);
 				
 		// OPPGAVE - SLUTT
 		return timestr;
@@ -110,6 +116,20 @@ public class GPSUtils {
 		
 		// TODO
 		// OPPGAVE - START
+		str = Double.toString(d);
+		str = String.format(Locale.US, "%.2f", d);
+		
+		if (str.length() < TEXTWIDTH) {
+			int spaceDiff = 0;
+			spaceDiff = TEXTWIDTH - str.length();
+			for(int i = 0; i < spaceDiff; i++) {			
+				str = " " + str;
+						
+			}
+		 
+			
+		}
+		
 		
 		// OPPGAVE - SLUTT
 		
