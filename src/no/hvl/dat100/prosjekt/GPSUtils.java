@@ -18,10 +18,22 @@ public class GPSUtils {
 		
 		// TODO
 		// OPPGAVE - START
-		String secsString = Integer.toString(secs);
-		timestr = String.format("%.h%.m%.s", secs);	
+		int hours = secs / 3600;
+		int restMin = hours % 3600;
 		
-		System.out.print(timestr);
+		int minutes = restMin / 60;
+		int restSecs = restMin % 60;
+		
+		System.out.println(hours);
+		System.out.println(minutes);
+		System.out.println(restSecs);
+		
+		//String secsString = Integer.toString(secs);
+		//timestr = secsString;
+		
+		//timestr = String.format(secs);	
+		
+		
 				
 		// OPPGAVE - SLUTT
 		return timestr;
