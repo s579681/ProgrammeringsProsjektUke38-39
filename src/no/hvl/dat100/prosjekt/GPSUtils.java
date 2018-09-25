@@ -75,6 +75,7 @@ public class GPSUtils {
 		a = (pow(Math.sin((deltaLatitude)/(2.0)), 2.0)) + (Math.cos(latitude1))*(Math.cos(latitude2))*(pow(Math.sin((deltaLongitude)/(2)),2));
 		c = 2*(Math.atan2(Math.sqrt(a), Math.sqrt(1-a)));
 		d = R*c;
+		System.out.println(longitude1);
 				
 		// OPPGAVE - SLUTT
 
