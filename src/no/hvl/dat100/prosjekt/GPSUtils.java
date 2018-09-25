@@ -2,6 +2,8 @@ package no.hvl.dat100.prosjekt;
 
 import static java.lang.Math.*;
 
+import java.util.Locale;
+
 public class GPSUtils {
 
 	public GPSUtils() {
@@ -16,7 +18,20 @@ public class GPSUtils {
 		
 		// TODO
 		// OPPGAVE - START
-				
+		//Gjør om sekunder til timer og deretter minutter
+		int hours = secs / 3600;
+		int remainder = secs % 3600;
+		//finne sekunder til overs
+		int minutes = remainder / 60;
+		int seconds = (remainder % 60);
+		
+		
+		String hh = (hours < 10 ? "0" : "") + hours;
+		String mm = (minutes < 10 ? "0" : "") + minutes;
+		String ss = (seconds < 10 ? "0" : "") + seconds;
+		timestr = hh + TIMESEP + mm + TIMESEP + ss;
+			
+
 		// OPPGAVE - SLUTT
 		return timestr;
 	}
@@ -111,6 +126,20 @@ public class GPSUtils {
 		
 		// TODO
 		// OPPGAVE - START
+		str = Double.toString(d);
+		str = String.format(Locale.US, "%.2f", d);
+		
+		if (str.length() < TEXTWIDTH) {
+			int spaceDiff = 0;
+			spaceDiff = TEXTWIDTH - str.length();
+			for(int i = 0; i < spaceDiff; i++) {			
+				str = " " + str;
+						
+			}
+		 
+			
+		}
+		
 		
 		// OPPGAVE - SLUTT
 		

@@ -21,12 +21,19 @@ public class GPSComputer {
 	
 	// beregn total distances (i meter)
 	public double totalDistance() {
-
+		
 		double distance = 0;
-
+	
 		// TODO
 		// OPPGAVE - START
-
+		
+		for (int i = 0; i < latitudes.length; i++) {
+			if (i < latitudes.length-1) {
+				distance += GPSUtils.distance(latitudes[i], longitudes[i], latitudes[i+1], longitudes[i+1]);
+			
+			}
+		}
+		
 		// Hint: bruk distance-metoden fra GPSUtils.
 		
 		// OPPGAVE - SLUTT
@@ -36,12 +43,19 @@ public class GPSComputer {
 
 	// beregn totale høydemeter (i meter)
 	public double totalElevation() {
-
+		
 		double elevation = 0;
-
+				
 		// TODO
 		// OPPGAVE - START
-
+		
+		for (int i = 0; i < elevations.length; i++) {
+			if (i > 0 && elevations[i-1] < elevations[i]) {	
+				elevation += elevations[i] - elevations [i-1];
+			
+			}
+	
+		}
 		// OPPGAVE - SLUTT
 		return elevation;
 	}
@@ -53,6 +67,11 @@ public class GPSComputer {
 		
 		// TODO 
 		// OPPGAVE START
+		for (int i = 0; i < times.length; i++) {
+			if (i > 0 ) {
+				totaltime += times[i] - times[i-1];
+			}	
+		}
 		
 		// OPPGAVE SLUTT
 		
@@ -66,6 +85,12 @@ public class GPSComputer {
 		
 		// TODO
 		// OPPGAVE - START
+		for (int i = 0; i < times.length; i++) {
+			if (i < times.length-1) {
+				speeds += GPSUtils.speed(times[i], latitudes[i], longitudes[i], latitudes[i+1], longitudes[i+1]);
+		
+			}	
+		}
 		
 		// OPPGAVE - SLUTT
 		return speeds;
