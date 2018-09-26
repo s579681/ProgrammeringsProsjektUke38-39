@@ -1,4 +1,6 @@
-package no.hvl.dat100.prosjekt;
+	 package no.hvl.dat100.prosjekt;
+
+import com.sun.org.apache.bcel.internal.generic.IF_ICMPEQ;
 
 public class GPSComputer {
 	
@@ -49,13 +51,14 @@ public class GPSComputer {
 		// TODO
 		// OPPGAVE - START
 		
-		for (int i = 0; i < elevations.length; i++) {
-			if (i > 0 && elevations[i-1] < elevations[i]) {	
+		for (int i = 1; i < elevations.length; i++) {
+			if (elevations[i-1] < elevations[i]) {	
 				elevation += elevations[i] - elevations [i-1];
 			
 			}
 	
 		}
+		
 		// OPPGAVE - SLUTT
 		return elevation;
 	}
@@ -85,11 +88,9 @@ public class GPSComputer {
 		
 		// TODO
 		// OPPGAVE - START
-		for (int i = 0; i < times.length; i++) {
-			if (i < times.length-1) {
-				speeds += GPSUtils.speed(times[i], latitudes[i], longitudes[i], latitudes[i+1], longitudes[i+1]);
-		
-			}	
+		for (int i = 0; i < speeds.length; i++) {
+				speeds[i] = GPSUtils.speed((times[i+1] - times[i]), latitudes[i], longitudes[i], latitudes[i+1], longitudes[i+1]);
+			
 		}
 		
 		// OPPGAVE - SLUTT
@@ -103,6 +104,7 @@ public class GPSComputer {
 		
 		// TODO
 		// OPPGAVE - START
+		maxspeed = GPSUtils.findMax(speeds());
 				
 		// OPPGAVE - SLUTT
 		
@@ -116,6 +118,7 @@ public class GPSComputer {
 		
 		// TODO
 		// OPPGAVE - START
+		average = (totalDistance() / totalTime() * 3.6);
 				
 		// OPPGAVE - SLUTT
 		
@@ -137,6 +140,21 @@ public class GPSComputer {
 
 		// TODO
 		// OPPGAVE START
+		
+		
+		if (speedmph < 10) {
+				met = 4.0;
+		} 	else if (speedmph >= 10 && speedmph <= 12) {
+					met = 6.0;
+			}	else if (speedmph >= 12 && speedmph <= 14) {
+						met = 8.0;
+				}	else if (speedmph >= 14 && speedmph <= 16) {
+							met = 10.0;
+					}	else if (speedmph >= 16 && speedmph <= 20) {
+								met = 12.0;
+						} 	else if (speedmph >= 20) {
+									met = 16.0;
+							}
 		
 		// Energy Expended (kcal) = MET x Body Weight (kg) x Time (h)
 

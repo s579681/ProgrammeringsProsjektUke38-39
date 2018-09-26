@@ -29,8 +29,7 @@ public class GPSUtils {
 		String hh = (hours < 10 ? "0" : "") + hours;
 		String mm = (minutes < 10 ? "0" : "") + minutes;
 		String ss = (seconds < 10 ? "0" : "") + seconds;
-		timestr = hh + TIMESEP + mm + TIMESEP + ss;
-			
+		timestr = hh + TIMESEP + mm + TIMESEP + ss;			
 
 		// OPPGAVE - SLUTT
 		return timestr;
@@ -90,7 +89,6 @@ public class GPSUtils {
 		a = (pow(Math.sin((deltaLatitude)/(2.0)), 2.0)) + (Math.cos(latitude1))*(Math.cos(latitude2))*(pow(Math.sin((deltaLongitude)/(2)),2));
 		c = 2*(Math.atan2(Math.sqrt(a), Math.sqrt(1-a)));
 		d = R*c;
-		System.out.println(longitude1);
 				
 		// OPPGAVE - SLUTT
 
@@ -108,7 +106,6 @@ public class GPSUtils {
 		double distance = distance(latitude1,longitude1,latitude2,longitude2);
 		
 		speed = (distance / secs) * 3.6;
-		
 		// OPPGAVE - SLUTT
 
 		return speed;
@@ -139,7 +136,6 @@ public class GPSUtils {
 		 
 			
 		}
-		
 		
 		// OPPGAVE - SLUTT
 		
