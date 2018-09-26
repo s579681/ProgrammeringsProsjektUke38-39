@@ -18,23 +18,20 @@ public class GPSUtils {
 		
 		// TODO
 		// OPPGAVE - START
+		//Gjør om sekunder til timer og deretter minutter
 		int hours = secs / 3600;
-		int restMin = hours % 3600;
-		
-		int minutes = restMin / 60;
-		int restSecs = restMin % 60;
-		
-		System.out.println(hours);
-		System.out.println(minutes);
-		System.out.println(restSecs);
-		
-		//String secsString = Integer.toString(secs);
-		//timestr = secsString;
-		
-		//timestr = String.format(secs);	
+		int remainder = secs % 3600;
+		//finne sekunder til overs
+		int minutes = remainder / 60;
+		int seconds = (remainder % 60);
 		
 		
-				
+		String hh = (hours < 10 ? "0" : "") + hours;
+		String mm = (minutes < 10 ? "0" : "") + minutes;
+		String ss = (seconds < 10 ? "0" : "") + seconds;
+		timestr = hh + TIMESEP + mm + TIMESEP + ss;
+			
+
 		// OPPGAVE - SLUTT
 		return timestr;
 	}
