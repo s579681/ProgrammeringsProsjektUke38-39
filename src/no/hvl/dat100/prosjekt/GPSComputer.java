@@ -140,7 +140,7 @@ public class GPSComputer {
 
 		// TODO
 		// OPPGAVE START
-		
+		//h
 		
 		if (speedmph < 10) {
 				met = 4.0;
