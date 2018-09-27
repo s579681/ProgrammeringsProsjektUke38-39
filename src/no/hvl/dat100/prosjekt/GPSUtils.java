@@ -17,7 +17,7 @@ public class GPSUtils {
 		String TIMESEP = ":";
 		
 		// TODO
-		// OPPGAVE - START
+		// OPPGAVE - START 3d
 		//Gjør om sekunder til timer og deretter minutter
 		int hours = secs / 3600;
 		int remainder = secs % 3600;
@@ -56,7 +56,7 @@ public class GPSUtils {
 		//double min = 0.0; 
 
 		// TODO
-		// OPPGAVE - START
+		// OPPGAVE - START 3a
 		double min = da[0];
 		
 		for (double d : da) {
@@ -79,7 +79,7 @@ public class GPSUtils {
 		double a,c,d; // fjern = 1.0
 		
 		// TODO:
-		// OPPGAVE - START
+		// OPPGAVE - START 3b
 		latitude1 = Math.toRadians(latitude1);
 		latitude2 = Math.toRadians(latitude2);
 		double deltaLatitude = latitude2 - latitude1;
@@ -122,7 +122,7 @@ public class GPSUtils {
 		String str = "";
 		
 		// TODO
-		// OPPGAVE - START
+		// OPPGAVE - START 3c
 		str = Double.toString(d);
 		str = String.format(Locale.US, "%.2f", d);
 		
